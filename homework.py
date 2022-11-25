@@ -1,3 +1,7 @@
+"""Программа описывает модуль фитнес-трекера.
+Модуль обрабатывает входящие данные и выполняет несколько функций.
+Определяет вид тренировки, выполняет расчёты
+и выводит сообщение о результатах тренировки."""
 
 
 class InfoMessage:
@@ -180,7 +184,7 @@ class Swimming(Training):
         return super().show_training_info()
 
 
-def read_package(workout_type: str, data: list[int]) -> Training:
+def read_package(workout_type: str, data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
     CODE_TRAINING = {'RUN': Running, 'WLK': SportsWalking, 'SWM': Swimming}
     for i in CODE_TRAINING.keys():
