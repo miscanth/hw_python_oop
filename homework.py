@@ -145,8 +145,6 @@ def read_package(workout_type: str, data: List[int]) -> Training:
         'RUN': Running,
         'WLK': SportsWalking,
         'SWM': Swimming}
-    if workout_type not in CODE_TRAINING.keys():
-        raise KeyError('Расчётов для данного типа тренировок нет.')
     return CODE_TRAINING[workout_type](*data)
 
 
@@ -163,5 +161,8 @@ if __name__ == '__main__':
     ]
 
     for workout_type, data in packages:
-        training = read_package(workout_type, data)
-        main(training)
+        try:
+            training = read_package(workout_type, data)
+            main(training)
+        except KeyError:
+            print('Ошибка чтения входящих данных')
