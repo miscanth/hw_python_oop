@@ -48,3 +48,6 @@ pip install -r requirements.txt
 ```
 python3.9 homework.py
 ```
+
+## Разработчик (исполнитель):
+👩🏼‍💻 Юлия: https://github.com/miscanth
